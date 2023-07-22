@@ -70,4 +70,23 @@
 		<url-pattern>*.bookmark</url-pattern>
 	</servlet-mapping>
 	
+   <servlet>
+      <servlet-name>Board</servlet-name>
+      <servlet-class>com.replace.bord.BoardFrontController</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>Board</servlet-name> 
+      <url-pattern>*.board</url-pattern>
+   </servlet-mapping>
+   
+    <servlet>
+      <servlet-name>Main</servlet-name>
+      <servlet-class>com.replace.main.MainFrontController</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>Main</servlet-name> 
+      <url-pattern>*.main</url-pattern>
+   </servlet-mapping>
 </web-app>
