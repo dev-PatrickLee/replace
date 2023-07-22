@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,7 @@
                   height="14"
                   style="width: 17px; height: 14px; object-fit: contain"/>
               </button>
-                        <a href="https://www.wanted.co.kr/jobsfeed" class="MainBar_MainBar_logo">
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/main.main'" class="MainBar_MainBar_logo">
                             <!-- <svg width="74" height="21" viewBox="0 0 140 32"> -->
                                 <img alt="" src="../../static/images/horizontal-logo.png" width="120px" height="50px">
                             <!-- </svg> -->
@@ -32,21 +33,23 @@
                 </div>
                 <ul class="Menu_className__gGcYQ">
                     <li data-attribute-id="gnb">
-                        <a href="../../templates/mypage/myPage.jsp">MY 리플레이스</a>
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/mypage.apply'">MY 리플레이스</a>
                     </li>
                     <li class="smMoreVisible">
-                        <a href="https://www.wanted.co.kr/cv/list">프로필</a>
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/profile.apply'">프로필</a>
                     </li>
                     <li class="smMoreVisible">
-                        <a href="https://www.wanted.co.kr/community">제안 현황</a>
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/apply.apply'">제안 현황</a>
                     </li>
                     <li class="smMoreVisible">
-                        <a href="https://www.wanted.co.kr/gigs/experts" class target="_blank" rel="noopener noreferrer">북마크</a>
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/bookmark.bookmark'">북마크</a>
                     </li>
                     <li class="smMoreVisible">
-                        <a href="https://www.wanted.co.kr/aiscore/resume">계정 설정</a>
+                        <a href="javascript:location.href='${pageContext.request.contextPath}/mypage.apply'">계정 설정</a>
                     </li>
                 </ul>
+       <c:choose>
+		<c:when test="${not empty sessionScope.memberId}">
                 <aside class="Aside_className isLoggedIn">
                     <ul>
                        <!--  <li>
@@ -116,6 +119,57 @@
                     </ul>
                     <div class="Aside_visibleMenu"></div>
                 </aside>
+     </c:when>
+		<c:otherwise>
+		        <aside class="Aside_className">
+            <ul>
+              <li>
+                <button class="searchButton" type="button">
+                  <svg
+                    xmlns="https://www.w3.org/2000/svg"
+                    xmlns:xlink="https://www.w3.org/1999/xlink"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18">
+                    <defs>
+                      <path
+                        id="searchButtonPath"
+                        d="M15.727 17.273a.563.563 0 10.796-.796l-4.875-4.875-.19-.165a.563.563 0 00-.764.028 5.063 5.063 0 111.261-2.068.562.562 0 101.073.338 6.188 6.188 0 10-1.943 2.894l4.642 4.644z">
+                      </path>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <use
+                        fill="#333"
+                        fill-rule="nonzero"
+                        stroke="#333"
+                        stroke-width=".3"
+                        xlink:href="searchButtonPath">
+                      </use>
+                    </g>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="signUpButton" type="button" onclick="location.href='${pageContext.request.contextPath}/loginEmail.member'";>회원가입/로그인</button>
+              </li>
+              <li class="mdMoreVisible leftDivision">
+                <a class="dashboardButton" href="javascript:location.href='${pageContext.request.contextPath}/loginEmail.member'">기업 서비스</a>
+              </li>
+              <li class="Aside_visibleMenu">
+                <button class="menuButton" type="button">
+                  <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M12 10a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm7 0a2 2 0 1 1-.001 4.001A2 2 0 0 1 19 10zM5 10a2 2 0 1 1-.001 4.001A2 2 0 0 1 5 10z">
+                    </path>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <div class="Aside_visibleMenu"></div>
+          </aside>
+		</c:otherwise>
+	</c:choose>
             </nav>
                     <div class="OverlayJobCategory_Container" id = "OverlayJobCategory_Container">
           <div>
