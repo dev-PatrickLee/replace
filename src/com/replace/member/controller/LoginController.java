@@ -14,9 +14,9 @@ public class LoginController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String memberIdentification = null, memberPassword = null;
+		String memberEmail = null, memberPassword = null;
 		Result result = new Result();
-		boolean autoLogin = false;
+//		boolean autoLogin = false;
 		
 //		캐시: 내 PC의 메모리
 //		쿠키: 로컬에 저장
@@ -29,36 +29,37 @@ public class LoginController implements Action {
 			
 //			쿠키를 하나씩 가져와서
 			for(Cookie cookie: cookies){
-//				KEY값이 memberIdentification라면 담겨있는 회원 아이디 가져오기
-				if(cookie.getName().equals("memberIdentification")) {
-					memberIdentification = cookie.getValue();
+//				KEY값이 memberEmail 라면 담겨있는 회원 이메일 가져오기
+				if(cookie.getName().equals("memberEmail")) {
+					memberEmail = cookie.getValue();
 				}
 //				KEY값이 memberPassword라면 담겨있는 회원 비밀번호 가져오기
 				if(cookie.getName().equals("memberPassword")) {
 					memberPassword = cookie.getValue();
 				}
 //				KEY값이 autoLogin이라면 담겨있는 자동 로그인 체크 유무 가져오기
-				if(cookie.getName().equals("autoLogin")) {
-					autoLogin = Boolean.valueOf(cookie.getValue());
-				}
+//				if(cookie.getName().equals("autoLogin")) {
+//					autoLogin = Boolean.valueOf(cookie.getValue());
+//				}
 			}
 		}
 		
-//		쿠키에 사용자 아이디가 있다면
-		if(memberIdentification != null) {
+//		쿠키에 사용자 이메일 있다면
+		if(memberEmail != null) {
 //			로그인으로 쿠키에 있던 아이디와 비밀번호 전송
-			req.setAttribute("memberIdentification", memberIdentification);
+			req.setAttribute("memberEmail", memberEmail);
 			req.setAttribute("memberPassword", memberPassword);
 			result.setPath("loginOk.member");
-		}else {
-//			로그아웃 후 로그인 페이지로 이동한다면,
-//			자동 로그인 체크 여부를 판단하여 그대로 유지한다.
-			if(autoLogin) {
-				req.setAttribute("autoLogin", autoLogin);
-			}
-			result.setPath("templates/member/login.jsp");
 		}
-		
+//		else {
+////			로그아웃 후 로그인 페이지로 이동한다면,
+////			자동 로그인 체크 여부를 판단하여 그대로 유지한다.
+//			if(autoLogin) {
+//				req.setAttribute("autoLogin", autoLogin);
+//			}
+//			result.setPath("templates/member/login.jsp");
+//		}
+//		
 		return result;
 	}
 

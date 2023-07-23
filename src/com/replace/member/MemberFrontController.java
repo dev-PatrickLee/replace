@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.replace.member.controller.LoginController;
+import com.replace.member.controller.LoginOkController;
 import com.replace.Result;
 import com.replace.member.controller.CheckEmailOkController;
 import com.replace.member.controller.MyPageController;
@@ -38,13 +40,23 @@ public class MemberFrontController extends HttpServlet {
 			result.setPath("templates/member/signUp.jsp");
 			
 		}else if(target.equals("loginEmail")) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 25f597a6f92e7c42d1424e50af25b351208fdb60
 			result = new Result();
 			result.setPath("templates/member/loginEmail.jsp");
-			/*
-			 * }else if(target.equals("loginOK")) { result = new Result();
-			 * result.setPath("main/index.jsp");
-			 */
+			
+		}else if(target.equals("main")) {
+			result = new Result();
+			result.setPath("main/index.jsp");
+			
+		} else if(target.equals("login")){
+			result = new LoginController().execute(req, resp);
+			
+		}else if(target.equals("loginOK")) { 
+			result = new LoginOkController().execute(req, resp);
+	
 //		계정찾기
 		}else if(target.equals("findID")){
 			result = new Result();
@@ -57,13 +69,7 @@ public class MemberFrontController extends HttpServlet {
 			result.setPath("templates/mypage/profile.jsp");
 		}
 		
-		/*
-		 * if(target.equals("checkIdOk")) { result = new
-		 * CheckIdOkController().execute(req, resp);
-		 * 
-		 * } else if(target.equals("checkEmailOk")) { result = new
-		 * CheckEmailOkController().execute(req, resp);
-		 */
+
 		
 		if(result != null) {
 			if(result.isRedirect()) {

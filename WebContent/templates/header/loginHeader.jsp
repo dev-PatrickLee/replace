@@ -49,7 +49,7 @@
                     </li>
                 </ul>
        <c:choose>
-		<c:when test="${not empty sessionScope.memberId}">
+		<c:when test="${not empty sessionScope.id}">
                 <aside class="Aside_className isLoggedIn">
                     <ul>
                        <!--  <li>
@@ -718,7 +718,7 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script type="text/javascript">
-let memberId = "${sessionScope.memberId}";
+let memberEmail = "${sessionScope.memberEmail}";
 
 $(".MainBar_hamberger").mouseenter(function(){
   $(".OverlayJobCategory_Container").css("display","block");

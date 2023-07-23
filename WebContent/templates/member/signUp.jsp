@@ -28,8 +28,8 @@
                     </div>
 
                     <!-- 회원정보 입력칸 -->
+                        <form class="signForm" name="signForm" action=""  method="post">
                     <div class="formbox">
-                        <form>
                             <!-- 이메일 -->
                             <div>
                                 <div class="text"> 이메일</div>
@@ -361,25 +361,25 @@
                                     <span class="mediaAgree">앱 푸시</span>
                                 </label>
                             </div>
-                        </form>
-                    </div>
                     <!-- 가입하기 -->
                     <div class="footerbox">
-                        <button class="confirm">
+                        <button class="confirm" id="loginButton" onclick="send()">
                             <span class="confirmText">가입하기</span>
                         </button>
                     </div>
+                    </div>
+                        </form>
                 </div>
             </div>
         </div>
     </body>
-
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/login.js"></script>
     <script>
         $(document).ready(function () {
             $('.telinput1').on('input', function () {
                 var tel = $(this).val();
-                var telRegex = /^\d{9}$/;
+                var telRegex = /^\d{11}$/;
 
                 if (!telRegex.test(tel)) {
                     $(this).css("border-color", "red");

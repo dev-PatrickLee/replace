@@ -6,34 +6,9 @@ public class PositionDTO {
 	private String positionName;
 	private String positionDueDate;
 	private String companyName;
+	private int applyCount;
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PositionDTO other = (PositionDTO) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "PositionDTO [id=" + id + ", positionName=" + positionName + ", positionDueDate=" + positionDueDate
-				+ ", companyName=" + companyName + "]";
-	}
+	public PositionDTO() {;}
 
 	public long getId() {
 		return id;
@@ -67,8 +42,40 @@ public class PositionDTO {
 		this.companyName = companyName;
 	}
 
-	public PositionDTO() {;}
-	
-	
+	public int getApplyCount() {
+		return applyCount;
+	}
 
+	public void setApplyCount(int applyCount) {
+		this.applyCount = applyCount;
+	}
+
+	@Override
+	public String toString() {
+		return "PositionDTO [id=" + id + ", positionName=" + positionName + ", positionDueDate=" + positionDueDate
+				+ ", companyName=" + companyName + ", applyCount=" + applyCount + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PositionDTO other = (PositionDTO) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
 }

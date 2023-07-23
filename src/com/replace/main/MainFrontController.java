@@ -21,18 +21,25 @@ public class MainFrontController extends HttpServlet {
         MemberVO memberVO = new MemberVO();
         String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
         Result result = null;
-        String memberId = null;
+        String id = null;
 
         // memberId 값을 적절히 설정
         HttpSession session = req.getSession();
-        memberId = (String) session.getAttribute("memberId");
-        req.setAttribute("memberId", memberId);
+        id = (String) session.getAttribute("id");
+ 
 
         if (target.equals("main")) {
             result = new Result();
             result.setPath("/main/index.jsp");
         }
 
+        if (id != null) {
+            memberVO = memberDAO.selectMember(id); 
+            if (memberVO != null) {
+                req.setAttribute("id", id);
+            }
+        }
+        
         if (result != null) {
             if (result.isRedirect()) {
                 resp.sendRedirect(result.getPath());

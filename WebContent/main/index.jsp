@@ -399,7 +399,10 @@
 <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
 <script>
 	let contextPath = "${pageContext.request.contextPath}";
-	let memberId = "${sessionScope.memberId}";
+	let memberEmail = "${sessionScope.memberId}";
+
+	let Id = "${sessionScope.Id}";
+
 </script>
 
 <script type="text/javascript">

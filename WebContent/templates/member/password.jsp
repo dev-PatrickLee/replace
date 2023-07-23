@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>password</title>
-    <link rel="stylesheet" href="../../static/css/member/password.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/member/password.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                 <div class="passwordTitle">
                     <label class="passwordText">비밀번호</label>
                 </div>
-				<input type="hidden" name="memberEmail" value="${memberEmail}">
+				<input type="hidden" name="email" value="${memberEmail}">
                 <div style="position: relative;">
                     <input class="passwordInput" name="password" type="password" placeholder="비밀번호를 입력해주세요.">
                     <button class="eyeButton">
@@ -55,7 +55,7 @@
                 </div>
 
                 <div style="width: 100%;">
-                    <button class="loginNext" id="sendPassword" class="passwordSend">
+                    <button class="loginNext" id="sendPassword">
                     다음</button>
                 </div>
                 <button class="passwordManipulation">

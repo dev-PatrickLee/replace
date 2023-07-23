@@ -27,11 +27,11 @@ public class PositionFrontController extends HttpServlet {
 		 * } else if(target.equals("checkEmailOk")) { result = new
 		 * CheckEmailOkController().execute(req, resp);
 		 */
-		if (target.equals("positionList")) {
+		if (target.equals("company-mypage")) {
 			
 			result = new PositionController().execute(req, resp);
-			result.setPath("templates/mypage/apply.jsp");
-			result.setRedirect(false);
+		} else {
+			
 		}
 		
 		

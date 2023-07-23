@@ -28,6 +28,7 @@
 			where member_id=#{id}
 		)
 	</select>
+<<<<<<< HEAD
 	<select id="selectCount" resultType = "_int">
 		select count(tp.id)
 		from tbl_position tp
@@ -38,6 +39,19 @@
 		)
 	</select>
 	
+=======
+
+	<select id='selectAllWithApplyCount' resultType="positionDTO">
+		select p.id, p.position_name, position_due_date, apply_count from tbl_position p
+		left outer join 
+		(
+			select position_id, count(member_id) apply_count from tbl_apply
+			group by position_id
+		) a
+		on p.id = a.position_id
+		where company_id = #{companyId}
+	</select>	
+>>>>>>> 25f597a6f92e7c42d1424e50af25b351208fdb60
 </mapper>
 
 

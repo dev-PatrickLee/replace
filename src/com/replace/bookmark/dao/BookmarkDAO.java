@@ -28,6 +28,16 @@ public class BookmarkDAO {
 		
 	}
 	
+<<<<<<< HEAD
+=======
+	public void addBookmark(String memberId, String positionId) {
+		BookmarkVO bookmarkVO = new BookmarkVO();
+		bookmarkVO.setMember_id(memberId);
+		bookmarkVO.setPosition_id(positionId);
+		
+		sqlSession.insert("bookmark.addBookmark", bookmarkVO);
+	}
+>>>>>>> 25f597a6f92e7c42d1424e50af25b351208fdb60
 }
 
 

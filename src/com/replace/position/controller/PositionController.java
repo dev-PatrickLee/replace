@@ -19,21 +19,14 @@ public class PositionController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		
+//		long companyId = (Long)req.getSession().getAttribute("id");
+		long companyId = 3L;
 		Result result = new Result();
-		PositionVO positionVO = new PositionVO();
 		PositionDAO positionDAO = new PositionDAO();
-		BookmarkDAO bookmarkDAO = new BookmarkDAO();
 		
+		req.setAttribute("positions", positionDAO.selectAllWithApplyCount(companyId));
 		
-//		positionVO = positionDAO.selectPosition(req.getParameter("positionId"));
-//		req.setAttribute("positionVO", positionVO);
-		
-		List<PositionDTO> list = positionDAO.selectPositionList(req.getParameter("memberId"));
-		req.setAttribute("list", list);
-		req.setAttribute("bookmark", bookmarkDAO.countBookmark(req.getParameter("memberId")));
-		req.setAttribute("applied", list.size());
-		
+		result.setPath("templates/company/company-mypage.jsp");
 		return result;
 	}
 

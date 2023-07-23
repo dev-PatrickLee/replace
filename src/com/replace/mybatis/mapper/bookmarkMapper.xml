@@ -27,6 +27,10 @@
 			where member_id= #{id}
 		)
 	</select>
+	<insert id="addBookmark">
+		insert into tbl_bookmark(member_id, position_id)
+		values(#{memberId},#{positionId})
+	</insert>
 	
 </mapper>
 
