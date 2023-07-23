@@ -25,7 +25,7 @@
               </button>
                         <a href="javascript:location.href='${pageContext.request.contextPath}/main.main'" class="MainBar_MainBar_logo">
                             <!-- <svg width="74" height="21" viewBox="0 0 140 32"> -->
-                                <img alt="" src="../../static/images/horizontal-logo.png" width="120px" height="50px">
+                                <img alt="" src="${pageContext.request.contextPath}/static/images/horizontal-logo.png" width="120px" height="50px">
                             <!-- </svg> -->
                         </a>
                     </div>
@@ -94,7 +94,7 @@
                         <li class="mdMoreVisible profileBox Aside_hasNewMywantedAlarm__p2Tfv">
                             <button type="button" class="profileButton">
                                 <div class="avatarBorder">
-                                    <div class="avatarImage" style="background-image: url(../../static/images/aprilProfile.jpg);"></div>
+                                    <div class="avatarImage" style="background-image: url(${pageContext.request.contextPath}/static/images/aprilProfile.jpg);"></div>
                                 </div>
                             </button>
                             <span class="Badge_Badge" style="background-color: rgb(51, 102, 255); width: 13px; height: 13px;">
@@ -727,10 +727,10 @@ $(".MainBar_hamberger").mouseenter(function(){
 $(".Explore_Container").mouseleave(function(){
   $(".OverlayJobCategory_Container").css("display","none");
   $(".Explore_SubCategory").css("display","none");
-
 });
 $("#programming").mouseover(function(){
   $(".Explore_SubCategory").css("display","block");
 });
+
 </script>
 </html>

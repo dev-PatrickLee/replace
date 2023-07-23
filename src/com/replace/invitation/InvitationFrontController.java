@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.replace.Result;
+import com.replace.invitation.controller.InvitationController;
+import com.replace.invitation.dao.InvitationDAO;
 
-public class invitationFrontController extends HttpServlet {
+public class InvitationFrontController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,6 +28,10 @@ public class invitationFrontController extends HttpServlet {
 		 * } else if(target.equals("checkEmailOk")) { result = new
 		 * CheckEmailOkController().execute(req, resp);
 		 */
+		
+		if (target.equals("list")) {
+			result = new InvitationController().execute(req, resp);
+		}
 		
 		if(result != null) {
 			if(result.isRedirect()) {

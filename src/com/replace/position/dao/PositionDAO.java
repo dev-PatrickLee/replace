@@ -23,6 +23,11 @@ public class PositionDAO {
 		List<PositionDTO> list = sqlSession.selectList("position.selectlist", id);
 		return list;
 	}
+	public int selectPositionCount(String id) {
+		
+		return sqlSession.selectOne("position.selectCount", id);
+	}
+	
 }
 
 

@@ -12,6 +12,8 @@
 		<typeAlias type="com.replace.position.domain.PositionVO" alias="positionVO"/>
 		<typeAlias type="com.replace.position.domain.PositionDTO" alias="positionDTO"/>
 		<typeAlias type="com.replace.bookmark.domain.BookmarkVO" alias="bookmarkVO"/>
+		<typeAlias type="com.replace.invitation.domain.InvitationDTO" alias="invitationDTO"/>
+		
 	</typeAliases>
 
 	<environments default="mysql">

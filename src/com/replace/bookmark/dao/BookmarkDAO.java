@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.replace.mybatis.config.MyBatisConfig;
 import com.replace.position.domain.PositionDTO;
+import com.replace.bookmark.domain.BookmarkVO;
 import com.replace.member.domain.MemberVO;
 
 public class BookmarkDAO {
@@ -26,6 +27,7 @@ public class BookmarkDAO {
 		return list;
 		
 	}
+	
 }
 
 

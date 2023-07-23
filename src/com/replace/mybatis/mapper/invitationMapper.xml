@@ -14,6 +14,22 @@
 		select member_identification from tbl_member where member_identification = #{memberIdentification}
 	</select> -->
 	
+	<select id="list" resultType="invitationDTO">
+		select tp.position_name , tp.position_detail ,tc.company_name 
+		from tbl_position tp join tbl_company tc
+		on tp.company_id = tc.id
+		where tp.id in (
+			select position_id
+			from tbl_invitation ti 
+			where member_id = #{id}
+		)
+	</select>
+	<select id="count" resultType = "_int">
+		select count(id)
+		from tbl_invitation
+		where member_id = #{id}
+	</select>
+	
 </mapper>
 
 

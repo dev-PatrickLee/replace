@@ -6,13 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<link rel="stylesheet" href="../static/css/main/main.css" />
-<link rel="stylesheet" href="../static/css/main/menu.css" />
-<link rel="stylesheet" href="../static/css/main/slick.css" />
-<link rel="stylesheet" href="../static/css/main/cardList.css" />
-<link rel="stylesheet" href="../static/css/main/lineBanner.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main/main.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main/menu.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main/slick.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main/cardList.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main/lineBanner.css" />
 </head>
-
 
 
 <body>

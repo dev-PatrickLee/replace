@@ -89,4 +89,14 @@
       <servlet-name>Main</servlet-name> 
       <url-pattern>*.main</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>Invitation</servlet-name>
+      <servlet-class>com.replace.invitation.InvitationFrontController</servlet-class>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>Invitation</servlet-name> 
+      <url-pattern>*.invitation</url-pattern>
+   </servlet-mapping>
 </web-app>

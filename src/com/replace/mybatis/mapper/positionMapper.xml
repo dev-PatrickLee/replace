@@ -28,6 +28,15 @@
 			where member_id=#{id}
 		)
 	</select>
+	<select id="selectCount" resultType = "_int">
+		select count(tp.id)
+		from tbl_position tp
+		where tp.id in (
+			select position_id
+			from tbl_apply ta 
+			where member_id=#{id}
+		)
+	</select>
 	
 </mapper>
 
